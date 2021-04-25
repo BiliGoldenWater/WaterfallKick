@@ -18,7 +18,9 @@ public class OnServerKickEvent implements Listener {
         String disabledServerName = plugin.getConfig().getConfig().get("disabledServer");
         String playerServerName = player.getServer().getInfo().getName();
 
-        if (!(playerServerName.equals(lobbyName) || playerServerName.equals(disabledServerName))) {
+        if (!(playerServerName.equals(lobbyName) ||
+                playerServerName.equals(disabledServerName) ||
+                event.getKickReasonComponent()[0].toPlainText().equals("[Proxy] Lost connection to server."))) {
             ServerInfo serverInfo = ProxyServer.getInstance().getServerInfo(lobbyName);
             event.setCancelled(true);
             event.setCancelServer(serverInfo);
