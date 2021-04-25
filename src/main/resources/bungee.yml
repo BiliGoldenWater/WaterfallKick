@@ -1,0 +1,5 @@
+name: WaterfallDisconnect
+version: ${project.version}
+main: indi.goldenwater.waterfallkick.WaterfallKick
+description: Send player to lobby server when player disconnect by server.
+author: Golden_Water
